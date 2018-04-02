@@ -1,0 +1,201 @@
+@charset "utf-8";
+/*!
+ * Copyright &copy; 2012-2013 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ */
+a:link,a:visited{color:#282828;text-decoration:none;}
+a:hover,a:active{color:#ff0000;text-decoration:underline;}
+a.btn.btn-primary{color:#ffffff;}
+
+body {padding-bottom:3px;font-size:14px;}
+body *{font-family: "Microsoft Yahei";}
+
+.navbar.navbar-fixed-top{_margin-bottom:10px;}
+
+h4{border-left:3px solid #dddddd;background-color:#f5f5f5;padding:5px;margin:10px 0 5px;}
+h5{border-left:2px solid #dddddd;background-color:#f5f5f5;padding:3px;margin:10px 0 5px;}
+h6{padding:0;margin:5px 0;}
+
+footer, footer a, footer .footer_nav a, footer .copyright a{line-height:20px;font-size:12px;color:#888888;}
+footer .footer_nav, footer .copyright{margin:5px 0;}
+
+.breadcrumb{margin:10px 0 5px;padding:5px 10px;}
+
+/* form 
+.control-group {margin:10px 0;padding-bottom:10px;border-bottom:1px solid #F1F1F1;}
+.control-label{float:left;width:140px;padding-top:3px;text-align:right;}
+.controls{margin-left:160px;text-align:left;}
+.controls .mid, .controls .error{display:inline-block;vertical-align:middle;margin-bottom:10px;background-position:0 2px;}
+.form-actions{padding-left:160px;}
+.alert{margin:20px;padding:10px;}
+.alert-error{border:2px dotted #f00;color:#f00;font-weight:bold;}
+.txt,.btn{padding:4px;border:1px solid;border-color:#999 #ccc #ccc #999;background:#f9f9f9;color:#333;font-size:14px;vertical-align:middle;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.txt:hover, .txt:focus {border-color: #09c;background: #f5f9fd;}
+.btn {padding:5px 10px;*padding:5px 5px 2px;border-color:#ddd #999 #999 #ddd;background:#ddd;color:#000;cursor:pointer;}
+
+
+/* page
+.page {font-size:14px;font-weight:bold;margin:10px;padding-bottom:10px;*padding-bottom:0;width:750px;}
+.page p{float:left;color:#37679c;text-indent:0;padding:4px 7px;margin:-0.1em 1em 0 0;}
+.page ul{list-style:none;margin:0;padding:0;}
+.page li{list-style:none;margin:0 2px;display:block;float:left;line-height:16px;background-color:#fff;}
+.page li.disabled a,.page li.disabled a:hover{border:1px solid #eee;padding:4px 8px;color:#ccc;}
+.page li.active a{border:1px solid #9cf;padding:4px 8px;background-color:#9ce;color:#fff;}
+.page li.none{border:0;padding:4px 8px;background:none;}
+.page li a{border:1px solid #d1ecfb;padding:4px 9px;display:block;text-decoration:none;color:#37679c;}
+.page li a:hover{border:1px solid #9cf;}
+.page *{-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+.page_small{font-size:12px;font-weight:bold;margin:3px;padding-bottom:10px;*padding-bottom:0;}
+.page_small p{float:left;color:#37679c;text-indent:0;padding:2px 5px;margin:-0.1em 1em 0 0;}
+.page_small ul{list-style:none;margin:0;padding:0;}
+.page_small li{list-style:none;margin:0 2px;display:block;float:left;line-height:16px;background-color:#fff;}
+.page_small li.disabled a,.page_small li.disabled a:hover{border:1px solid #eee;padding:2px 6px;color:#ccc;}
+.page_small li.active a{border:1px solid #9cf;padding:2px 6px;background-color:#9ce;color:#fff;}
+.page_small li.none{border:0;padding:2px 6px;background:none;}
+.page_small li a{border:1px solid #d1ecfb;padding:2px 7px;display:block;text-decoration:none;color:#37679c;}
+.page_small li a:hover{border:1px solid #9cf;}
+.page_small *{-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
+ */
+
+/*首页*/
+
+
+
+/*功能入口*/
+.home-function{
+    margin: 60px 0;
+    padding-left: 20px;
+}
+
+.home-function>div.service-title{
+    margin-bottom: 30px;
+}
+.home-function>div.service-title h5,
+.home-function>div.service-title h6{
+    border: none;
+    background-color: transparent;
+    font-weight: normal;
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+}
+.home-function>div.service-title h5{
+    color: rgb(12, 91, 164);
+    font-size: 26px;
+    line-height: 30px;
+}
+.home-function>div.service-title h6{
+    color: rgb(111, 110, 110);
+    font-size: 22px;
+    line-height: 24px;
+}
+.home-function>div.service-title hr{
+    margin: 10px 0 5px;
+}
+
+
+.home-function>div.quick-service{
+    border: 1px solid #aaa;
+    float: left;
+    height: 320px;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 31%;
+    text-align: center;
+}
+.home-function>div#quick-mail:hover,
+.home-function>div#quick-evaluate:hover{
+    background: #00afec;
+    moz-box-shadow: 2px 2px 5px #ccc, 2px 2px 5px #ccc;
+    -webkit-box-shadow: 2px 2px 5px #ccc, 2px 2px 5px #ccc;
+    box-shadow: 2px 2px 5px #ccc, 2px 2px 5px #ccc;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.home-function>div.quick-service h4{
+    border: none;
+    background-color: transparent;
+    color: rgb(12, 91, 164);
+    font-size: 22px;
+    padding: 0;
+    margin: 10px 0;
+}
+.home-function>div#quick-mail:hover h4,
+.home-function>div#quick-evaluate:hover h4{
+    color: #fff;
+    transition: all 0.2s;
+}
+/*快速查询*/
+.quick-sea{
+    padding: 15px;
+}
+.quick-sea h4{
+    line-height: 36px;
+    text-align: left;
+}
+.quick-sea textarea{
+    box-sizing: border-box;
+    width: 100%;
+}
+.quick-sea button{
+    background: #005dae;
+    border: none;
+    border-radius: 5px;
+    moz-box-shadow: 2px 2px 5px #ccc, 2px 2px 5px #ccc;
+    -webkit-box-shadow: 2px 2px 5px #ccc, 2px 2px 5px #ccc;
+    box-shadow: 2px 2px 5px #ccc, 2px 2px 5px #ccc;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    height: 36px;
+    width: 100%;
+}
+.quick-sea button:hover{
+    background: #007bca;
+    transition: all 0.2s;
+}
+/*快速寄件 模态框*/
+#online-mail{
+    margin-left: -470px;
+    width: 940px;
+}
+#online-mail table{
+    margin-bottom: 20px;
+    width: 100%;
+}
+#online-mail table caption{
+    color: #007bca;
+    font-size: 16px;
+    text-align: left;
+}
+/*快速评价 模态框*/
+#online-evaluate{
+
+}
+
+
+/*新闻*/
+.news-banner{
+    border: 1px solid #aaa;
+    float: left;
+    height: 240px;
+    width: 36%;
+}
+.tabbable{
+    float: right;
+    width: 60%;
+}
+ul.tab-list{
+
+}
+ul.tab-list li{
+    list-style: none;
+    line-height: 30px;
+}
+ul.tab-list li a,
+ul.tab-list li span {
+    color: #666;
+    font-size: 16px;
+}
+.btn-more{
+    width: 30%;
+}

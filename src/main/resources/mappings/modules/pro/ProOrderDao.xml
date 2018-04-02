@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thinkgem.jeesite.modules.pro.dao.ProOrderDao">
+    
+	<sql id="proOrderColumns">
+		a.id AS "id",
+		a.code AS "code",
+		a.receive_name AS "receiveName",
+		a.receive_phone AS "receivePhone",
+		a.receive_addr AS "receiveAddr",
+		a.weight AS "weight",
+		a.send_name AS "sendName",
+		a.send_phone AS "sendPhone",
+		a.send_addr AS "sendAddr",
+		a.comment AS "comment",
+		a.status AS "status",
+		a.remarks AS "remarks",
+		a.create_by AS "createBy.id",
+		a.create_date AS "createDate",
+		a.update_by AS "updateBy.id",
+		a.update_date AS "updateDate",
+		a.del_flag AS "delFlag"
+	</sql>
+	
+	<sql id="proOrderJoins">
+	</sql>
+    
+	<select id="get" resultType="ProOrder">
+		SELECT 
+			<include refid="proOrderColumns"/>
+		FROM pro_order a
+		<include refid="proOrderJoins"/>
+		WHERE a.id = #{id}
+	</select>
+	
+	<select id="findList" resultType="ProOrder">
+		SELECT 
+			<include refid="proOrderColumns"/>
+		FROM pro_order a
+		<include refid="proOrderJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="code != null and code != ''">
+				AND a.code = #{code}
+			</if>
+			<if test="receiveName != null and receiveName != ''">
+				AND a.receive_name = #{receiveName}
+			</if>
+				<if test="status != null and status != ''">
+				AND a.status = #{status}
+			</if>
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findList2" resultType="ProOrder">
+		SELECT 
+			<include refid="proOrderColumns"/>
+		FROM pro_order a
+		<include refid="proOrderJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+			<if test="code != null and code != ''">
+				AND a.code = #{code}
+			</if>
+			<if test="receiveName != null and receiveName != ''">
+				AND a.receive_name = #{receiveName}
+			</if>
+			<if test="status != null and status != ''">
+				AND a.status = #{status}
+			</if>
+			AND a.status != 3
+			
+		</where>
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="findAllList" resultType="ProOrder">
+		SELECT 
+			<include refid="proOrderColumns"/>
+		FROM pro_order a
+		<include refid="proOrderJoins"/>
+		<where>
+			a.del_flag = #{DEL_FLAG_NORMAL}
+		</where>		
+		<choose>
+			<when test="page !=null and page.orderBy != null and page.orderBy != ''">
+				ORDER BY ${page.orderBy}
+			</when>
+			<otherwise>
+				ORDER BY a.update_date DESC
+			</otherwise>
+		</choose>
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO pro_order(
+			id,
+			code,
+			receive_name,
+			receive_phone,
+			receive_addr,
+			weight,
+			send_name,
+			send_phone,
+			send_addr,
+			comment,
+			status,
+			remarks,
+			create_by,
+			create_date,
+			update_by,
+			update_date,
+			del_flag
+		) VALUES (
+			#{id},
+			#{code},
+			#{receiveName},
+			#{receivePhone},
+			#{receiveAddr},
+			#{weight},
+			#{sendName},
+			#{sendPhone},
+			#{sendAddr},
+			#{comment},
+			#{status},
+			#{remarks},
+			#{createBy.id},
+			#{createDate},
+			#{updateBy.id},
+			#{updateDate},
+			#{delFlag}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE pro_order SET 	
+			receive_name = #{receiveName},
+			receive_phone = #{receivePhone},
+			receive_addr = #{receiveAddr},
+			weight = #{weight},
+			send_name = #{sendName},
+			send_phone = #{sendPhone},
+			send_addr = #{sendAddr},
+			comment = #{comment},
+			status = #{status},
+			remarks = #{remarks},
+			update_by = #{updateBy.id},
+			update_date = #{updateDate}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="delete">
+		UPDATE pro_order SET 
+			del_flag = #{DEL_FLAG_DELETE}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>
